@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (foodWheel && wheelItems.length > 0) {
     const foodData = [
       {
-        eyebrow: "HSR Layout's Favorite Burger",
+        eyebrow: "Jumeirah's Favorite Burger",
         title: "Spicy. Juicy.<br><span>Paneer Tikka.</span>",
         desc: "Our signature Tandoori Paneer Tikka Burger features crispy golden paneer marinated for 12 hours, stacked with fresh capsicum and topped with fiery mint mayonnaise.",
         ctaText: "Explore Burgers",
