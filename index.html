@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether & Crumb | Premium Indian Street-Fusion Café & Hangout</title>
+  <meta name="description" content="HSR Layout's favorite neighborhood adda. Serving loaded double-patty burgers, cheese-burst pizzas, fiery chicken momos, and thick chocolate milkshakes.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Aether & <span>Crumb</span></a>
+      
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="about.html" class="nav-link">Our Vibe</a></li>
+        <li><a href="visit.html" class="nav-link">Find Us</a></li>
+        <li><a href="booking.html" class="nav-link">Book a Table</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <!-- Ambient Globs for Visual Depth -->
+    <div class="glow-bg"></div>
+    <div class="glow-bg-left"></div>
+    
+    <div class="container hero-grid">
+      <div class="hero-content fade-in" id="heroTextContent">
+        <span class="eyebrow" id="heroEyebrow">HSR Layout's Favorite Burger</span>
+        <h1 id="heroTitle">Spicy. Juicy.<br><span>Paneer Tikka.</span></h1>
+        <p id="heroDesc">Our signature Tandoori Paneer Tikka Burger features crispy golden paneer marinated for 12 hours, stacked with fresh capsicum and topped with fiery mint mayonnaise.</p>
+        <div class="btn-group">
+          <a href="menu.html#burgersCategory" class="btn btn-primary" id="heroCTA">Explore Burgers</a>
+          <a href="visit.html" class="btn btn-secondary">Get Directions</a>
+        </div>
+      </div>
+      <div class="hero-showcase-container fade-in delay-2">
+        <div class="food-wheel-wrapper">
+          <div class="food-wheel-glow" id="foodWheelGlow"></div>
+          <div class="food-wheel" id="foodWheel">
+            <!-- Food Item 1 (Burger) -->
+            <div class="wheel-item active" style="--item-index: 0;" data-food-index="0">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80" alt="Tandoori Paneer Tikka Burger">
+            </div>
+            <!-- Food Item 2 (Pizza) -->
+            <div class="wheel-item" style="--item-index: 1;" data-food-index="1">
+              <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80" alt="Chicken Tikka Pizza">
+            </div>
+            <!-- Food Item 3 (Momos) -->
+            <div class="wheel-item" style="--item-index: 2;" data-food-index="2">
+              <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80" alt="Fiery Chilli Chicken Momos">
+            </div>
+            <!-- Food Item 4 (Shake) -->
+            <div class="wheel-item" style="--item-index: 3;" data-food-index="3">
+              <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=600&q=80" alt="Belgian Chocolate Shake">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Interactive Controls -->
+        <div class="wheel-controls">
+          <button class="control-btn prev" id="wheelPrev" aria-label="Previous Item">
+            <svg viewBox="0 0 24 24"><path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z"/></svg>
+          </button>
+          <button class="control-btn next" id="wheelNext" aria-label="Next Item">
+            <svg viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Picks Section -->
+  <section class="provisions-section">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="eyebrow">House Specialties</span>
+        <h2>Popular Picks</h2>
+        <p>Loaded with cheese, packed with authentic spice, and plated to perfection. These are the dishes that keep HSR coming back.</p>
+      </div>
+      
+      <div class="dishes-grid">
+        <!-- Pick 1 -->
+        <div class="card dish-card reveal-on-scroll delay-1">
+          <div class="dish-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80" alt="Tandoori Paneer Tikka Burger">
+          </div>
+          <div class="dish-info">
+            <span class="dish-tag">Spicy Veg</span>
+            <h3 class="dish-title">Tandoori Paneer Tikka Burger</h3>
+            <p class="dish-desc">Crispy golden paneer patty smothered in fresh tandoori spices, topped with onions, green capsicum, and our signature fiery mint chutney mayo.</p>
+          </div>
+        </div>
+        
+        <!-- Pick 2 -->
+        <div class="card dish-card reveal-on-scroll delay-2">
+          <div class="dish-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80" alt="Fiery Chilli Chicken Momos">
+          </div>
+          <div class="dish-info">
+            <span class="dish-tag">Non-Veg Favorite</span>
+            <h3 class="dish-title">Fiery Chilli Chicken Momos</h3>
+            <p class="dish-desc">Pan-fried chicken dumplings tossed in our hot garlic chilli paste, sliced green onions, and fresh coriander, served with spicy red chutney.</p>
+          </div>
+        </div>
+        
+        <!-- Pick 3 -->
+        <div class="card dish-card reveal-on-scroll delay-3">
+          <div class="dish-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=800&q=80" alt="Loaded Belgian Chocolate Shake">
+          </div>
+          <div class="dish-info">
+            <span class="dish-tag">Thick Shake</span>
+            <h3 class="dish-title">Belgian Chocolate Shake</h3>
+            <p class="dish-desc">Rich, ultra-thick milkshake blended with premium imported Belgian cocoa, topped with chocolate fudge, fresh cream, and chocolate flakes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why People Gather Here (USP) -->
+  <section class="usp-section">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="eyebrow">The Hangout Standard</span>
+        <h2>Why HSR Hangs Out Here</h2>
+        <p>No corporate checklists. Just a vibrant atmosphere, bold flavors, and memories made over late-night mocktails and board games.</p>
+      </div>
+      
+      <div class="usp-grid">
+        <!-- USP 1 -->
+        <div class="usp-card reveal-on-scroll delay-1">
+          <div class="usp-icon">
+            <svg viewBox="0 0 24 24"><path d="M12,3C17.5,3 22,6.58 22,11C22,15.42 17.5,19 12,19C10.74,19 9.54,18.79 8.44,18.42L4,20L5.22,15.7C3.18,14.44 2,12.8 2,11C2,6.58 6.5,3 12,3M12,5C7.58,5 4,7.69 4,11C4,12.35 4.88,13.57 6.44,14.45L5.75,16.88L8.1,16C9.32,16.65 10.63,17 12,17C16.42,17 20,14.31 20,11C20,7.69 16.42,5 12,5Z"/></svg>
+          </div>
+          <h3>Tandoor & Spice Fusion</h3>
+          <p>We fuse global street food classics with rich, authentic Indian marinades, custom-balancing heat levels for the perfect desi punch.</p>
+        </div>
+        
+        <!-- USP 2 -->
+        <div class="usp-card reveal-on-scroll delay-2">
+          <div class="usp-icon">
+            <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/></svg>
+          </div>
+          <h3>Desi Adda Culture</h3>
+          <p>Plush lounge seating, neon-accented corners, custom curated acoustic playlists, and board games to keep the conversation going.</p>
+        </div>
+        
+        <!-- USP 3 -->
+        <div class="usp-card reveal-on-scroll delay-3">
+          <div class="usp-icon">
+            <svg viewBox="0 0 24 24"><path d="M19,19H5V8H19M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3M12,10.5A1.5,1.5 0 0,0 10.5,12A1.5,1.5 0 0,0 12,13.5A1.5,1.5 0 0,0 13.5,12A1.5,1.5 0 0,0 12,10.5Z"/></svg>
+          </div>
+          <h3>Instagrammable Curation</h3>
+          <p>Every single shake, cheese pull, and neon sign is styled to look stunning on your Instagram reels and stories.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram Grid Section -->
+  <section class="instagram-section">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="eyebrow">Social Proof</span>
+        <h2>Vibe Check on Instagram</h2>
+        <p>See what's cooking, brewing, and trending today. Tag us in your stories to get featured on <a href="https://instagram.com/aetherandcrumb" target="_blank" style="color: var(--primary-red); font-weight: 800;">@aetherandcrumb</a></p>
+      </div>
+      
+      <div class="instagram-grid">
+        <!-- Post 1 -->
+        <div class="instagram-item reveal-on-scroll delay-1">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=500&q=80" alt="Lively interior of café with neon accents and warm hangout lighting">
+          <div class="instagram-overlay">
+            <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5Z"/></svg>
+          </div>
+        </div>
+        
+        <!-- Post 2 -->
+        <div class="instagram-item reveal-on-scroll delay-2">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Crispy cheese burst pizza pull shot">
+          <div class="instagram-overlay">
+            <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5Z"/></svg>
+          </div>
+        </div>
+        
+        <!-- Post 3 -->
+        <div class="instagram-item reveal-on-scroll delay-3">
+          <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=500&q=80" alt="Vibrant neon colored mocktail with garnishes">
+          <div class="instagram-overlay">
+            <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5Z"/></svg>
+          </div>
+        </div>
+        
+        <!-- Post 4 -->
+        <div class="instagram-item reveal-on-scroll delay-4">
+          <img src="https://images.unsplash.com/photo-1608686207856-001b95cf60ca?auto=format&fit=crop&w=500&q=80" alt="Close-up of golden brown pastries in a display counter">
+          <div class="instagram-overlay">
+            <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5Z"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Call to Action Banner -->
+  <section class="cta-section">
+    <div class="container reveal-on-scroll">
+      <div class="cta-banner">
+        <h2>Your Table Is Waiting.</h2>
+        <p>Skip the scroll. Gather your gang, grab a controller, or just chill out. We are open till late in Sector 4, HSR Layout.</p>
+        <a href="visit.html" class="btn btn-primary">Find Us & Directions</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="color: #ffffff;">Aether & <span>Crumb</span></a>
+        <p>A premium street-fusion café and social hangout. Crafted coffee, spicy bites, and pure vibes.</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Navigate</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Our Menu</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="visit.html">Visit Us</a></li>
+          <li><a href="booking.html">Book a Table</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="https://instagram.com/aetherandcrumb" target="_blank">Instagram</a></li>
+          <li><a href="https://zomato.com" target="_blank">Zomato</a></li>
+          <li><a href="mailto:hello@aetherandcrumb.com">Email Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Café Hours</h4>
+        <div class="footer-info">
+          <p>Monday - Sunday<br>8:00 AM - 10:00 PM</p>
+          <p>12, Ground Floor, Sector 4,<br>HSR Layout, Bengaluru</p>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Aether & Crumb. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Sticky Bottom Mobile Navigation (Indian Café Standard) -->
+  <div class="sticky-cta">
+    <div class="sticky-cta-btn-group">
+      <a href="menu.html" class="btn btn-primary">View Menu</a>
+      <a href="booking.html" class="btn btn-secondary">Book a Table</a>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

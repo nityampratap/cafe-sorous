@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Table | Aether & Crumb</title>
+  <meta name="description" content="Reserve your table at Aether & Crumb, HSR Layout. Skip the queue for double-patty burgers, cheesy pizzas, fiery momos, and thick milkshakes.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Aether & <span>Crumb</span></a>
+      
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="about.html" class="nav-link">Our Vibe</a></li>
+        <li><a href="visit.html" class="nav-link">Find Us</a></li>
+        <li><a href="booking.html" class="nav-link active">Book a Table</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Reservation Section -->
+  <section class="visit-section" style="padding-top: 180px;">
+    <!-- Ambient Globs -->
+    <div class="glow-bg"></div>
+    <div class="glow-bg-left"></div>
+
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="eyebrow">Table Reservation</span>
+        <h2>Book a Table</h2>
+        <p>Skip the wait. Lock in your spot for a casual hangout, birthday bash, or late-night gaming session with the gang.</p>
+      </div>
+
+      <div class="visit-grid">
+        <!-- Reservation terms and guidelines -->
+        <div class="visit-info-panel fade-in delay-1">
+          <div class="card" style="padding: 3rem; display: flex; flex-direction: column; gap: 2.5rem;">
+            
+            <div class="visit-block-item">
+              <h3>Reservation Terms</h3>
+              <p style="font-weight: 700; font-size: 1.25rem; color: #ffffff; margin-bottom: 0.5rem;">Holding Policy</p>
+              <p>We hold tables for a maximum of 15 minutes past your reserved slot. If you're running late, drop us an email.</p>
+            </div>
+            
+            <div class="visit-block-item">
+              <h3>Group Bookings</h3>
+              <p style="font-weight: 700; font-size: 1.25rem; color: #ffffff; margin-bottom: 0.5rem;">Parties of 8 or More</p>
+              <p>For large group bookings, private events, or custom tandoori catering requests, please fill out the special request section.</p>
+            </div>
+            
+            <div class="visit-block-item">
+              <h3>Timings Available</h3>
+              <p style="font-weight: 700; font-size: 1.25rem; color: #ffffff; margin-bottom: 0.5rem;">Reserve Daily</p>
+              <p>Table bookings are open from 8:00 AM till 9:30 PM. Walk-ins are always welcome based on table availability.</p>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- The Booking Form -->
+        <div class="fade-in delay-2">
+          <div class="card" style="padding: 3rem; background: var(--bg-dark-card); border: var(--border-glass-bright);">
+            <form action="#" method="POST" onsubmit="event.preventDefault(); document.getElementById('confirmationModal').style.display = 'flex';">
+              <div style="display: flex; flex-direction: column; gap: 2.5rem; margin-bottom: 3rem;">
+                
+                <div class="form-grid" style="grid-template-columns: 1fr; gap: 2.5rem; margin-bottom: 0;">
+                  <div class="form-group">
+                    <input type="text" id="bookingName" class="form-input" placeholder=" " required>
+                    <label for="bookingName" class="form-label">Full Name</label>
+                  </div>
+                  <div class="form-group">
+                    <input type="email" id="bookingEmail" class="form-input" placeholder=" " required>
+                    <label for="bookingEmail" class="form-label">Email Address</label>
+                  </div>
+                  <div class="form-group">
+                    <input type="tel" id="bookingPhone" class="form-input" placeholder=" " required>
+                    <label for="bookingPhone" class="form-label">Phone Number</label>
+                  </div>
+                </div>
+
+                <div class="form-grid" style="gap: 2.5rem; margin-bottom: 0;">
+                  <div class="form-group">
+                    <input type="date" id="bookingDate" class="form-input" style="color-scheme: dark;" required>
+                    <label for="bookingDate" class="form-label" style="top: -1.75rem; font-size: 0.8125rem; font-weight: 800; color: var(--primary-red); letter-spacing: 0.12em; text-transform: uppercase;">Date</label>
+                  </div>
+                  <div class="form-group">
+                    <input type="time" id="bookingTime" class="form-input" style="color-scheme: dark;" required>
+                    <label for="bookingTime" class="form-label" style="top: -1.75rem; font-size: 0.8125rem; font-weight: 800; color: var(--primary-red); letter-spacing: 0.12em; text-transform: uppercase;">Time Slot</label>
+                  </div>
+                </div>
+
+                <div class="form-grid" style="gap: 2.5rem; margin-bottom: 0;">
+                  <div class="form-group">
+                    <select id="bookingGuests" class="form-input" style="background: transparent; border: none; border-bottom: 1.5px solid rgba(255, 255, 255, 0.1); color: #ffffff;" required>
+                      <option value="" disabled selected style="background-color: var(--bg-dark-card);"></option>
+                      <option value="1" style="background-color: var(--bg-dark-card);">1 Guest</option>
+                      <option value="2" style="background-color: var(--bg-dark-card);">2 Guests</option>
+                      <option value="3-4" style="background-color: var(--bg-dark-card);">3-4 Guests</option>
+                      <option value="5-6" style="background-color: var(--bg-dark-card);">5-6 Guests</option>
+                      <option value="7+" style="background-color: var(--bg-dark-card);">7+ Guests</option>
+                    </select>
+                    <label for="bookingGuests" class="form-label" style="top: -1.75rem; font-size: 0.8125rem; font-weight: 800; color: var(--primary-red); letter-spacing: 0.12em; text-transform: uppercase;">Number of Guests</label>
+                  </div>
+                  
+                  <div class="form-group">
+                    <select id="bookingOccasion" class="form-input" style="background: transparent; border: none; border-bottom: 1.5px solid rgba(255, 255, 255, 0.1); color: #ffffff;" required>
+                      <option value="" disabled selected style="background-color: var(--bg-dark-card);"></option>
+                      <option value="Casual" style="background-color: var(--bg-dark-card);">Casual Hangout</option>
+                      <option value="Birthday" style="background-color: var(--bg-dark-card);">Birthday Party</option>
+                      <option value="Anniversary" style="background-color: var(--bg-dark-card);">Anniversary</option>
+                      <option value="Gaming" style="background-color: var(--bg-dark-card);">Gaming Session</option>
+                      <option value="Office" style="background-color: var(--bg-dark-card);">Office Meetup</option>
+                    </select>
+                    <label for="bookingOccasion" class="form-label" style="top: -1.75rem; font-size: 0.8125rem; font-weight: 800; color: var(--primary-red); letter-spacing: 0.12em; text-transform: uppercase;">Occasion</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <textarea id="bookingNotes" class="form-input" placeholder=" " rows="2" style="resize: none;"></textarea>
+                  <label for="bookingNotes" class="form-label">Special Requests (Optional)</label>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Confirm Reservation</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Confirmation Modal -->
+  <div id="confirmationModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); z-index: 2000; align-items: center; justify-content: center; padding: 2rem;">
+    <div class="card" style="max-width: 500px; width: 100%; padding: 3rem; text-align: center; border: var(--border-glass-bright); background: var(--bg-dark-surface);">
+      <div class="usp-icon" style="margin-bottom: 2rem;">
+        <svg viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+      </div>
+      <h3 style="margin-bottom: 1rem;">Reservation Confirmed!</h3>
+      <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 2.5rem;">We have registered your table request. A confirmation email and text details have been sent to you.</p>
+      <button class="btn btn-primary" onclick="document.getElementById('confirmationModal').style.display = 'none'; window.location.href='index.html';">Back to Home</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="color: #ffffff;">Aether & <span>Crumb</span></a>
+        <p>A premium street-fusion café and social hangout. Crafted coffee, spicy bites, and pure vibes.</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Navigate</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="visit.html">Visit Us</a></li>
+          <li><a href="booking.html">Book a Table</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="https://instagram.com/aetherandcrumb" target="_blank">Instagram</a></li>
+          <li><a href="https://zomato.com" target="_blank">Zomato</a></li>
+          <li><a href="mailto:hello@aetherandcrumb.com">Email Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Café Hours</h4>
+        <div class="footer-info">
+          <p>Monday - Sunday<br>8:00 AM - 10:00 PM</p>
+          <p>12, Ground Floor, Sector 4,<br>HSR Layout, Bengaluru</p>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Aether & Crumb. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Sticky Bottom Mobile CTA (Indian Café Standard) -->
+  <div class="sticky-cta">
+    <div class="sticky-cta-btn-group">
+      <a href="menu.html" class="btn btn-primary">View Menu</a>
+      <a href="booking.html" class="btn btn-secondary">Book a Table</a>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
