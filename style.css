@@ -1630,3 +1630,52 @@ section {
     height: 44px;
   }
 }
+
+/* ==========================================
+   3D AUTOMATIC ROTATING SHOWCASE CUBE
+   ========================================== */
+.cube-container {
+  width: 100%;
+  aspect-ratio: 1;
+  perspective: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+  z-index: 5;
+}
+
+.cube-showcase {
+  width: 290px;
+  height: 360px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: rotateY(var(--cube-rotation, 0deg));
+}
+
+.cube-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: var(--border-glass-bright);
+  box-shadow: var(--shadow-hover);
+  transform-style: preserve-3d;
+}
+
+.cube-face.front  { transform: rotateY(0deg) translateZ(145px); }
+.cube-face.right  { transform: rotateY(90deg) translateZ(145px); }
+.cube-face.back   { transform: rotateY(180deg) translateZ(145px); }
+.cube-face.left   { transform: rotateY(-90deg) translateZ(145px); }
+
+.cube-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateZ(1px);
+}
+

@@ -277,4 +277,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startAutoPlay();
   }
+
+  // ==========================================
+  // 3D AUTOROTATING SHOWCASE CUBE
+  // ==========================================
+  const cube = document.getElementById('cubeShowcase');
+  if (cube) {
+    let rotation = 0;
+    setInterval(() => {
+      rotation -= 90;
+      cube.style.setProperty('--cube-rotation', `${rotation}deg`);
+    }, 4500);
+  }
 });
