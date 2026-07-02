@@ -816,7 +816,7 @@ section {
 
 /* Why Gather (USPs) */
 .usp-section {
-  background: linear-gradient(180deg, var(--bg-dark-base) 0%, var(--bg-dark-surface) 100%);
+  background: transparent;
 }
 
 .usp-grid {

@@ -47,32 +47,32 @@
     <div class="glow-bg-left"></div>
 
     <div class="container">
-      <div class="section-header fade-in">
-        <span class="eyebrow">The Loaded Feast</span>
-        <h2>Our Menu</h2>
-        <p>From tandoori spice kicks to cheesy cheese bursts and ice-cold refreshments, explore our crowd favorites. Fresh, fiery, and completely delicious.</p>
+      <div class="section-header reveal-on-scroll">
+        <span class="eyebrow">The Catalog</span>
+        <h2>Loaded Street Comfort</h2>
+        <p>Gooey cheese, high-octane spice, and cold creamy milkshakes. Handcrafted in Jumeirah, Dubai.</p>
       </div>
 
-      <!-- Segmented Controls and Filters -->
-      <div class="menu-toggles-container fade-in delay-1">
+      <!-- Category Navigation -->
+      <div class="menu-toggles-container reveal-on-scroll">
+        <!-- Food vs Beverages Segmented Switch -->
         <div class="toggle-segmented">
-          <button class="toggle-btn active" id="toggleFood">Food</button>
+          <button class="toggle-btn active" id="toggleFood">Eatables</button>
           <button class="toggle-btn" id="toggleBev">Beverages</button>
         </div>
         
-        <!-- Food Sub-Tabs -->
+        <!-- Category sub-tabs -->
         <div class="tabs-categories" id="foodTabs">
-          <button class="tab-link active" data-target="burgersCategory">Burgers</button>
-          <button class="tab-link" data-target="pizzaCategory">Pizza</button>
-          <button class="tab-link" data-target="momosCategory">Momos</button>
-          <button class="tab-link" data-target="sidesCategory">Sides & Fries</button>
+          <a href="#burgersCategory" class="tab-link active" data-category="burgersCategory">Burgers</a>
+          <a href="#pizzaCategory" class="tab-link" data-category="pizzaCategory">Pizza</a>
+          <a href="#momosCategory" class="tab-link" data-category="momosCategory">Momos</a>
+          <a href="#sidesCategory" class="tab-link" data-category="sidesCategory">Fries & Sides</a>
         </div>
 
-        <!-- Beverages Sub-Tabs (hidden initially) -->
         <div class="tabs-categories" id="bevTabs" style="display: none;">
-          <button class="tab-link active" data-target="shakesCategory">Milkshakes</button>
-          <button class="tab-link" data-target="mocktailsCategory">Mocktails & Coolers</button>
-          <button class="tab-link" data-target="hotCategory">Hot Brews</button>
+          <a href="#shakesCategory" class="tab-link active" data-category="shakesCategory">Shakes</a>
+          <a href="#mocktailsCategory" class="tab-link" data-category="mocktailsCategory">Mocktails & Coolers</a>
+          <a href="#hotCategory" class="tab-link" data-category="hotCategory">Hot Brews</a>
         </div>
       </div>
 
@@ -85,7 +85,7 @@
         <div class="menu-category-section active" id="burgersCategory">
           <div class="menu-grid">
             <!-- Signature Item (Burger Card) -->
-            <div class="card dish-card reveal-on-scroll" style="margin-bottom: 2.5rem; display: flex; flex-direction: row; align-items: center;">
+            <div class="card dish-card reveal-on-scroll" style="margin-bottom: 2.5rem; display: flex; flex-direction: row; align-items: center; var(--item-delay: 0);">
               <div class="dish-img-wrapper" style="width: 35%; aspect-ratio: 1; flex-shrink: 0; border-radius: 24px 0 0 24px;">
                 <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=600&q=80" alt="Tandoori Paneer Tikka Burger">
               </div>
@@ -98,23 +98,33 @@
             </div>
 
             <!-- Item 2 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Crispy Veggie Crunch Burger</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge veg">Veg</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=500&q=80" alt="Crispy Veggie Crunch Burger" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">A crispy mixed-vegetable patty layered with sliced tomatoes, crunchy lettuce, cheddar cheese, and a creamy house special burger sauce.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Crispy Veggie Crunch Burger</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge veg">Veg</span>
+                </div>
+                <p class="menu-item-desc">A crispy mixed-vegetable patty layered with sliced tomatoes, crunchy lettuce, cheddar cheese, and a creamy house special burger sauce.</p>
+              </div>
             </div>
 
             <!-- Item 3 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Spicy Butter Chicken Burger</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge nonveg">Non-Veg</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?auto=format&fit=crop&w=500&q=80" alt="Spicy Butter Chicken Burger" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">Juicy butter chicken fillet cooked in smooth makhani gravy, topped with crunchy pickled onions and a dollop of fresh green herb cream.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Spicy Butter Chicken Burger</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge nonveg">Non-Veg</span>
+                </div>
+                <p class="menu-item-desc">Juicy butter chicken fillet cooked in smooth makhani gravy, topped with crunchy pickled onions and a dollop of fresh green herb cream.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -123,33 +133,48 @@
         <div class="menu-category-section" id="pizzaCategory" style="display: none;">
           <div class="menu-grid">
             <!-- Item 1 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Double Cheese Margherita Pizza</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge veg">Veg</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Double Cheese Margherita Pizza" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">Crispy thin crust loaded with double mozzarella cheese, rich Italian san marzano tomato sauce, and topped with fresh basil leaves.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Double Cheese Margherita Pizza</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge veg">Veg</span>
+                </div>
+                <p class="menu-item-desc">Crispy thin crust loaded with double mozzarella cheese, rich Italian san marzano tomato sauce, and topped with fresh basil leaves.</p>
+              </div>
             </div>
 
             <!-- Item 2 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Paneer Tikka & Capsicum Pizza</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge veg">Veg</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=500&q=80" alt="Paneer Tikka Pizza" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">Juicy paneer tikka cubes, crunchy green capsicum rings, sliced red onions, and mozzarella, drizzled with tandoori mayo.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Paneer Tikka & Capsicum Pizza</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge veg">Veg</span>
+                </div>
+                <p class="menu-item-desc">Juicy paneer tikka cubes, crunchy green capsicum rings, sliced red onions, and mozzarella, drizzled with tandoori mayo.</p>
+              </div>
             </div>
 
             <!-- Item 3 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Chicken Tikka & Jalapeno Pizza</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge nonveg">Non-Veg</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80" alt="Chicken Tikka & Jalapeno Pizza" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">Spicy smoked chicken tikka, fiery jalapeno slices, mozzarella, and dynamic garlic marinara base, baked to a bubbly cheese finish.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Chicken Tikka & Jalapeno Pizza</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge nonveg">Non-Veg</span>
+                </div>
+                <p class="menu-item-desc">Spicy smoked chicken tikka, fiery jalapeno slices, mozzarella, and dynamic garlic marinara base, baked to a bubbly cheese finish.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -158,7 +183,7 @@
         <div class="menu-category-section" id="momosCategory" style="display: none;">
           <div class="menu-grid">
             <!-- Signature Item (Momos Card) -->
-            <div class="card dish-card reveal-on-scroll" style="margin-bottom: 2.5rem; display: flex; flex-direction: row; align-items: center;">
+            <div class="card dish-card reveal-on-scroll" style="margin-bottom: 2.5rem; display: flex; flex-direction: row; align-items: center; var(--item-delay: 1);">
               <div class="dish-img-wrapper" style="width: 35%; aspect-ratio: 1; flex-shrink: 0; border-radius: 24px 0 0 24px;">
                 <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80" alt="Fiery Chilli Chicken Momos">
               </div>
@@ -171,23 +196,33 @@
             </div>
 
             <!-- Item 2 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Classic Steamed Veg Momos</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge veg">Veg</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1625220194771-7ebedd0b4a1c?auto=format&fit=crop&w=500&q=80" alt="Classic Steamed Veg Momos" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">Thin wheat dumplings packed with finely minced cabbage, carrots, beans, and spring onions, steamed and served with mild garlic mayonnaise.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Classic Steamed Veg Momos</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge veg">Veg</span>
+                </div>
+                <p class="menu-item-desc">Thin wheat dumplings packed with finely minced cabbage, carrots, beans, and spring onions, steamed and served with mild garlic mayonnaise.</p>
+              </div>
             </div>
 
             <!-- Item 3 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Crispy Fried Paneer Momos</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge veg">Veg</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=500&q=80" alt="Crispy Fried Paneer Momos" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">Crunchy golden fried momos stuffed with soft spiced paneer chunks and spices, served with our hot schezwan dip.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Crispy Fried Paneer Momos</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge veg">Veg</span>
+                </div>
+                <p class="menu-item-desc">Crunchy golden fried momos stuffed with soft spiced paneer chunks and spices, served with our hot schezwan dip.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -196,23 +231,33 @@
         <div class="menu-category-section" id="sidesCategory" style="display: none;">
           <div class="menu-grid">
             <!-- Item 1 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Peri-Peri Salted Fries</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge veg">Veg</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=500&q=80" alt="Peri-Peri Salted Fries" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">Crispy golden potato fries generously dusted with spicy African peri-peri spice mix, served with garlic mayo dip.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Peri-Peri Salted Fries</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge veg">Veg</span>
+                </div>
+                <p class="menu-item-desc">Crispy golden potato fries generously dusted with spicy African peri-peri spice mix, served with garlic mayo dip.</p>
+              </div>
             </div>
 
             <!-- Item 2 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Cheesy Cheese-Burst Fries</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge veg">Veg</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&w=500&q=80" alt="Cheesy Cheese-Burst Fries" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">A loaded bucket of crispy fries topped with liquid cheese sauce, melted mozzarella, chopped jalapenos, and green herbs.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Cheesy Cheese-Burst Fries</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge veg">Veg</span>
+                </div>
+                <p class="menu-item-desc">A loaded bucket of crispy fries topped with liquid cheese sauce, melted mozzarella, chopped jalapenos, and green herbs.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -228,7 +273,7 @@
         <div class="menu-category-section active" id="shakesCategory">
           <div class="menu-grid">
             <!-- Signature Item (Shake Card) -->
-            <div class="card dish-card reveal-on-scroll" style="margin-bottom: 2.5rem; display: flex; flex-direction: row; align-items: center;">
+            <div class="card dish-card reveal-on-scroll" style="margin-bottom: 2.5rem; display: flex; flex-direction: row; align-items: center; var(--item-delay: 2);">
               <div class="dish-img-wrapper" style="width: 35%; aspect-ratio: 1; flex-shrink: 0; border-radius: 24px 0 0 24px;">
                 <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=600&q=80" alt="Belgian Chocolate Shake">
               </div>
@@ -240,23 +285,33 @@
             </div>
 
             <!-- Item 2 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Kesar Pista Badam Shake</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge">Rich Desi</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=500&q=80" alt="Kesar Pista Badam Shake" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">A rich traditional milk blend infused with saffron threads (kesar), crushed pistachios, and chopped almonds, chilled to perfection.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Kesar Pista Badam Shake</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge">Rich Desi</span>
+                </div>
+                <p class="menu-item-desc">A rich traditional milk blend infused with saffron threads (kesar), crushed pistachios, and chopped almonds, chilled to perfection.</p>
+              </div>
             </div>
 
             <!-- Item 3 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Mango Mastani Shake</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge">Seasonal</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?auto=format&fit=crop&w=500&q=80" alt="Mango Mastani Shake" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">Thick mango pulp milkshake topped with a scoop of premium vanilla ice cream, glazed tutty-fruity, and chopped pistachios.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Mango Mastani Shake</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge">Seasonal</span>
+                </div>
+                <p class="menu-item-desc">Thick mango pulp milkshake topped with a scoop of premium vanilla ice cream, glazed tutty-fruity, and chopped pistachios.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -265,33 +320,48 @@
         <div class="menu-category-section" id="mocktailsCategory" style="display: none;">
           <div class="menu-grid">
             <!-- Item 1 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Fresh Mint Mojito</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge">Classic</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=500&q=80" alt="Fresh Mint Mojito" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">Muddled fresh mint leaves, lime wedges, and raw organic cane sugar, topped with sparkling soda water and crushed ice.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Fresh Mint Mojito</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge">Classic</span>
+                </div>
+                <p class="menu-item-desc">Muddled fresh mint leaves, lime wedges, and raw organic cane sugar, topped with sparkling soda water and crushed ice.</p>
+              </div>
             </div>
 
             <!-- Item 2 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Spiced Jamun Spritzer</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge">Desi Twist</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=500&q=80" alt="Spiced Jamun Spritzer" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">Tangy black plum (jamun) nectar, a touch of kala namak (black salt), roasted cumin powder, mint, and lemon spritzed with club soda.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Spiced Jamun Spritzer</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge">Desi Twist</span>
+                </div>
+                <p class="menu-item-desc">Tangy black plum (jamun) nectar, a touch of kala namak (black salt), roasted cumin powder, mint, and lemon spritzed with club soda.</p>
+              </div>
             </div>
 
             <!-- Item 3 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Masala Cold Drink</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge">Street Style</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=500&q=80" alt="Masala Cold Drink" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">Your favorite cola beverage upgraded with fresh lemon juice, chaat masala, black salt, and a refreshing sprig of mint.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Masala Cold Drink</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge">Street Style</span>
+                </div>
+                <p class="menu-item-desc">Your favorite cola beverage upgraded with fresh lemon juice, chaat masala, black salt, and a refreshing sprig of mint.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -300,33 +370,48 @@
         <div class="menu-category-section" id="hotCategory" style="display: none;">
           <div class="menu-grid">
             <!-- Item 1 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Pour-Over Coffee</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge">Estate Origin</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=500&q=80" alt="Pour-Over Coffee" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">V60 hand-brewed single-origin beans, rotated seasonally. Choose between our light-roast Ethiopian Yirgacheffe (floral/citrus) or Kelagur Estate India (nutty/caramel).</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Pour-Over Coffee</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge">Estate Origin</span>
+                </div>
+                <p class="menu-item-desc">V60 hand-brewed single-origin beans, rotated seasonally. Choose between our light-roast Ethiopian Yirgacheffe (floral/citrus) or Kelagur Estate India (nutty/caramel).</p>
+              </div>
             </div>
 
             <!-- Item 2 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Cortado</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge">Bold</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=500&q=80" alt="Cortado" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">Equal parts rich house-blend espresso and warm steamed organic whole milk, serving a perfectly balanced bold flavor.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Cortado</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge">Bold</span>
+                </div>
+                <p class="menu-item-desc">Equal parts rich house-blend espresso and warm steamed organic whole milk, serving a perfectly balanced bold flavor.</p>
+              </div>
             </div>
 
             <!-- Item 3 -->
-            <div class="menu-item-row reveal-on-scroll">
-              <div class="menu-item-header">
-                <span class="menu-item-title">Rose Cardamom Latte</span>
-                <span class="menu-item-leader"></span>
-                <span class="menu-item-badge">Specialty</span>
+            <div class="menu-item-row reveal-on-scroll" style="display: flex; align-items: center; gap: 2rem;">
+              <div style="width: 100px; height: 100px; border-radius: var(--radius-md); overflow: hidden; flex-shrink: 0; border: var(--border-glass);">
+                <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fc9f?auto=format&fit=crop&w=500&q=80" alt="Rose Cardamom Latte" style="width: 100%; height: 100%; object-fit: cover;">
               </div>
-              <p class="menu-item-desc">Double shot espresso blended with our house-infused rose-cardamom syrup and velvety textured milk, dusted with organic rose petals.</p>
+              <div style="flex-grow: 1;">
+                <div class="menu-item-header">
+                  <span class="menu-item-title">Rose Cardamom Latte</span>
+                  <span class="menu-item-leader"></span>
+                  <span class="menu-item-badge">Specialty</span>
+                </div>
+                <p class="menu-item-desc">Double shot espresso blended with our house-infused rose-cardamom syrup and velvety textured milk, dusted with organic rose petals.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -347,7 +432,7 @@
         <h4 class="footer-heading">Navigate</h4>
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="menu.html">Our Menu</a></li>
+          <li><a href="menu.html">Menu</a></li>
           <li><a href="about.html">Our Story</a></li>
           <li><a href="visit.html">Visit Us</a></li>
           <li><a href="booking.html">Book a Table</a></li>
@@ -383,83 +468,5 @@
   </div>
 
   <script src="main.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const toggleFood = document.getElementById('toggleFood');
-      const toggleBev = document.getElementById('toggleBev');
-      const foodTabs = document.getElementById('foodTabs');
-      const bevTabs = document.getElementById('bevTabs');
-
-      // Views
-      const foodView = document.getElementById('foodView');
-      const bevView = document.getElementById('bevView');
-
-      if (toggleFood && toggleBev && foodTabs && bevTabs && foodView && bevView) {
-        toggleFood.addEventListener('click', () => {
-          foodTabs.style.display = 'flex';
-          bevTabs.style.display = 'none';
-          
-          bevView.style.display = 'none';
-          foodView.style.display = 'block';
-          
-          // Switch categories to default
-          switchCategory('burgersCategory', 'foodTabs');
-        });
-
-        toggleBev.addEventListener('click', () => {
-          foodTabs.style.display = 'none';
-          bevTabs.style.display = 'flex';
-          
-          foodView.style.display = 'none';
-          bevView.style.display = 'block';
-          
-          // Switch categories to default
-          switchCategory('shakesCategory', 'bevTabs');
-        });
-      }
-
-      // Handle Sub-Tab Switching
-      const foodTabLinks = foodTabs.querySelectorAll('.tab-link');
-      const bevTabLinks = bevTabs.querySelectorAll('.tab-link');
-
-      function switchCategory(targetId, parentId) {
-        const parent = document.getElementById(parentId);
-        const links = parent.querySelectorAll('.tab-link');
-        links.forEach(link => {
-          if (link.getAttribute('data-target') === targetId) {
-            link.classList.add('active');
-          } else {
-            link.classList.remove('active');
-          }
-        });
-
-        // Hide all sections in active view
-        const sections = document.querySelectorAll('.menu-category-section');
-        sections.forEach(sec => {
-          if (sec.id === targetId) {
-            sec.style.display = 'block';
-            sec.classList.add('active');
-          } else {
-            sec.style.display = 'none';
-            sec.classList.remove('active');
-          }
-        });
-      }
-
-      foodTabLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          const target = e.target.getAttribute('data-target');
-          switchCategory(target, 'foodTabs');
-        });
-      });
-
-      bevTabLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          const target = e.target.getAttribute('data-target');
-          switchCategory(target, 'bevTabs');
-        });
-      });
-    });
-  </script>
 </body>
 </html>
