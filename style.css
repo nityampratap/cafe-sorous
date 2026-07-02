@@ -70,6 +70,9 @@ html {
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-dark-base);
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(255, 51, 51, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 159, 67, 0.03) 0%, transparent 50%);
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -78,11 +81,27 @@ body {
   transform-style: preserve-3d;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 159, 67, 0.015) 1px, transparent 1px);
+  background-size: 32px 32px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
 img {
   max-width: 100%;
   display: block;
   object-fit: cover;
   transition: var(--transition-premium);
+  filter: brightness(0.88) contrast(1.04) saturate(1.1) sepia(0.04);
+}
+
+img:hover {
+  filter: brightness(0.98) contrast(1.08) saturate(1.18);
 }
 
 a {
@@ -817,20 +836,39 @@ section {
   width: 80px;
   height: 80px;
   border-radius: var(--radius-full);
-  background-color: rgba(255, 51, 51, 0.06);
+  background-color: rgba(255, 51, 51, 0.08);
   color: var(--primary-red);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 2.5rem auto;
-  box-shadow: 0 0 25px rgba(255, 51, 51, 0.15);
-  border: 1px solid rgba(255, 51, 51, 0.15);
+  border: 1px solid rgba(255, 51, 51, 0.25);
   transform: translateZ(25px);
-  transition: transform 0.5s;
+  transition: var(--transition-premium);
+  position: relative;
+  box-shadow: 0 0 30px rgba(255, 51, 51, 0.2);
+}
+
+.usp-icon::before {
+  content: '';
+  position: absolute;
+  inset: -25px;
+  background: radial-gradient(circle, rgba(255, 51, 51, 0.18) 0%, transparent 70%);
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: var(--transition-premium);
 }
 
 .usp-card:hover .usp-icon {
   transform: translateZ(35px) scale(1.1);
+  border-color: rgba(255, 159, 67, 0.4);
+  color: var(--accent-gold);
+}
+
+.usp-card:hover .usp-icon::before {
+  transform: scale(1.3);
+  background: radial-gradient(circle, rgba(255, 159, 67, 0.25) 0%, transparent 70%);
 }
 
 .usp-icon svg {
