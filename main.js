@@ -9,11 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.addEventListener('click', () => {
       menuToggle.classList.toggle('open');
       navMenu.classList.toggle('open');
-      // Prevent scrolling when menu is open
       document.body.style.overflow = navMenu.classList.contains('open') ? 'hidden' : '';
     });
 
-    // Close menu when clicking nav link
     const navLinks = navMenu.querySelectorAll('a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -42,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
   // ==========================================
   // INTERACTIVE MENU PAGE TOGGLES
   // ==========================================
@@ -51,25 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const foodView = document.getElementById('foodView');
   const bevView = document.getElementById('bevView');
 
-  // Food Sub-Tabs
-  const tabVeg = document.getElementById('tabVeg');
-  const tabNonVeg = document.getElementById('tabNonVeg');
-  const vegCategory = document.getElementById('vegCategory');
-  const nonVegCategory = document.getElementById('nonVegCategory');
-
-  // Beverages Sub-Tabs
-  const tabHot = document.getElementById('tabHot');
-  const tabCold = document.getElementById('tabCold');
-  const hotCategory = document.getElementById('hotCategory');
-  const coldCategory = document.getElementById('coldCategory');
-
-  // Main Segment Toggle (Food / Beverages)
   if (toggleFood && toggleBev && foodView && bevView) {
     toggleFood.addEventListener('click', () => {
       toggleFood.classList.add('active');
       toggleBev.classList.remove('active');
       
-      // Smooth fade transition
       bevView.classList.remove('active');
       setTimeout(() => {
         bevView.style.display = 'none';
@@ -84,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleBev.classList.add('active');
       toggleFood.classList.remove('active');
       
-      // Smooth fade transition
       foodView.classList.remove('active');
       setTimeout(() => {
         foodView.style.display = 'none';
@@ -93,68 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
           bevView.classList.add('active');
         }, 50);
       }, 300);
-    });
-  }
-
-  // Food Sub-Category Filter (Veg / Non-Veg)
-  if (tabVeg && tabNonVeg && vegCategory && nonVegCategory) {
-    tabVeg.addEventListener('click', () => {
-      tabVeg.classList.add('active');
-      tabNonVeg.classList.remove('active');
-      
-      nonVegCategory.classList.remove('active');
-      setTimeout(() => {
-        nonVegCategory.style.display = 'none';
-        vegCategory.style.display = 'block';
-        setTimeout(() => {
-          vegCategory.classList.add('active');
-        }, 50);
-      }, 200);
-    });
-
-    tabNonVeg.addEventListener('click', () => {
-      tabNonVeg.classList.add('active');
-      tabVeg.classList.remove('active');
-      
-      vegCategory.classList.remove('active');
-      setTimeout(() => {
-        vegCategory.style.display = 'none';
-        nonVegCategory.style.display = 'block';
-        setTimeout(() => {
-          nonVegCategory.classList.add('active');
-        }, 50);
-      }, 200);
-    });
-  }
-
-  // Beverages Sub-Category Filter (Hot Brews / Cold & Specialty)
-  if (tabHot && tabCold && hotCategory && coldCategory) {
-    tabHot.addEventListener('click', () => {
-      tabHot.classList.add('active');
-      tabCold.classList.remove('active');
-      
-      coldCategory.classList.remove('active');
-      setTimeout(() => {
-        coldCategory.style.display = 'none';
-        hotCategory.style.display = 'block';
-        setTimeout(() => {
-          hotCategory.classList.add('active');
-        }, 50);
-      }, 200);
-    });
-
-    tabCold.addEventListener('click', () => {
-      tabCold.classList.add('active');
-      tabHot.classList.remove('active');
-      
-      hotCategory.classList.remove('active');
-      setTimeout(() => {
-        hotCategory.style.display = 'none';
-        coldCategory.style.display = 'block';
-        setTimeout(() => {
-          coldCategory.classList.add('active');
-        }, 50);
-      }, 200);
     });
   }
 
@@ -168,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          // Once animated, no need to track it anymore
           observer.unobserve(entry.target);
         }
       });
@@ -181,9 +100,50 @@ document.addEventListener('DOMContentLoaded', () => {
       revealObserver.observe(el);
     });
   } else {
-    // Fallback for browsers that don't support IntersectionObserver
     revealElements.forEach(el => el.classList.add('active'));
   }
+
+  // ==========================================
+  // 3D INTERACTIVE TILT EFFECT ON CARDS
+  // ==========================================
+  const tiltCards = document.querySelectorAll('.dish-card, .usp-card, .contact-form-section, .split-image, .instagram-item');
+  
+  tiltCards.forEach(card => {
+    // Inject glare container dynamically if not present
+    let glare = card.querySelector('.card-glare');
+    if (!glare) {
+      glare = document.createElement('div');
+      glare.className = 'card-glare';
+      card.appendChild(glare);
+    }
+
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const xc = rect.width / 2;
+      const yc = rect.height / 2;
+      
+      // Calculate tilt rotation (max 8 degrees for calm feel)
+      const tiltX = (yc - y) / 12;
+      const tiltY = (x - xc) / 12;
+      
+      card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-6px) translateZ(10px)`;
+      
+      // Update glare gradient position
+      const px = (x / rect.width) * 100;
+      const py = (y / rect.height) * 100;
+      glare.style.setProperty('--glare-x', `${px}%`);
+      glare.style.setProperty('--glare-y', `${py}%`);
+      glare.style.opacity = '1';
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+      glare.style.opacity = '0';
+    });
+  });
 
   // ==========================================
   // ROTATING FOOD WHEEL SHOWCASE
@@ -194,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnPrev = document.getElementById('wheelPrev');
   const heroContent = document.getElementById('heroTextContent');
 
-  // Text Elements to Update dynamically
   const heroEyebrow = document.getElementById('heroEyebrow');
   const heroTitle = document.getElementById('heroTitle');
   const heroDesc = document.getElementById('heroDesc');
@@ -242,17 +201,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const itemsCount = foodData.length;
       let diff = index - currentIndex;
 
-      // Calculate shortest path rotation
       if (diff > itemsCount / 2) diff -= itemsCount;
       if (diff < -itemsCount / 2) diff += itemsCount;
 
       wheelRotation += diff * -90;
       currentIndex = (index + itemsCount) % itemsCount;
 
-      // Apply wheel rotation variable
       foodWheel.style.setProperty('--wheel-rotation', `${wheelRotation}deg`);
 
-      // Update active classes
       wheelItems.forEach((item, i) => {
         if (i === currentIndex) {
           item.classList.add('active');
@@ -261,7 +217,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Update Text Content with Fade Transition
       if (heroContent) {
         heroContent.classList.add('text-changing');
         
@@ -275,7 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
             heroCTA.href = currentFood.ctaHref;
           }
           
-          // Fade back in
           heroContent.classList.remove('text-changing');
         }, 300);
       }
@@ -295,7 +249,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Next / Prev control clicks
     if (btnNext) {
       btnNext.addEventListener('click', () => {
         stopAutoPlay();
@@ -314,7 +267,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Click directly on items
     wheelItems.forEach((item, i) => {
       item.addEventListener('click', () => {
         stopAutoPlay();
@@ -323,7 +275,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Initialize Auto-play
     startAutoPlay();
   }
 });
