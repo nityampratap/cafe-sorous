@@ -86,7 +86,7 @@
         <!-- The Booking Form -->
         <div class="fade-in delay-2">
           <div class="card" style="padding: 3rem; background: var(--bg-dark-card); border: var(--border-glass-bright);">
-            <form action="#" method="POST" onsubmit="event.preventDefault(); document.getElementById('confirmationModal').style.display = 'flex';">
+            <form action="#" method="POST" onsubmit="showReservationSummary(event);">
               <div style="display: flex; flex-direction: column; gap: 2.5rem; margin-bottom: 3rem;">
                 
                 <div class="form-grid" style="grid-template-columns: 1fr; gap: 2.5rem; margin-bottom: 0;">
@@ -154,17 +154,87 @@
     </div>
   </section>
 
-  <!-- Interactive Confirmation Modal -->
-  <div id="confirmationModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); z-index: 2000; align-items: center; justify-content: center; padding: 2rem;">
-    <div class="card" style="max-width: 500px; width: 100%; padding: 3rem; text-align: center; border: var(--border-glass-bright); background: var(--bg-dark-surface);">
-      <div class="usp-icon" style="margin-bottom: 2rem;">
-        <svg viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+  <!-- Interactive Confirmation Modal with Manager Simulator -->
+  <div id="confirmationModal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); backdrop-filter: blur(15px); z-index: 2000; align-items: center; justify-content: center; padding: 1.5rem; overflow-y: auto;">
+    <div style="max-width: 850px; width: 100%; border: var(--border-glass-bright); background: var(--bg-dark-surface); border-radius: var(--radius-lg); overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; box-shadow: var(--shadow-hover); position: relative;">
+      
+      <!-- Left Column: Customer Success Details -->
+      <div style="padding: 3rem; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; border-right: var(--border-glass);">
+        <div class="usp-icon" style="margin-bottom: 2rem; background-color: rgba(5, 196, 107, 0.08); color: var(--primary-green); border: 1px solid rgba(5, 196, 107, 0.25); box-shadow: 0 0 30px rgba(5, 196, 107, 0.2);">
+          <svg viewBox="0 0 24 24" style="width: 32px; height: 32px; fill: currentColor;"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"/></svg>
+        </div>
+        <h3 style="margin-bottom: 1rem; color: #ffffff; font-family: var(--font-serif); font-size: 1.85rem;">Booking Confirmed!</h3>
+        <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2.5rem;">
+          Your table is locked in. We've sent a digital invite card to your email. See you soon!
+        </p>
+        <button class="btn btn-primary" onclick="document.getElementById('confirmationModal').style.display = 'none'; window.location.href='index.html';" style="width: 100%;">Back to Home</button>
       </div>
-      <h3 style="margin-bottom: 1rem;">Reservation Confirmed!</h3>
-      <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 2.5rem;">We have registered your table request. A confirmation email and text details have been sent to you.</p>
-      <button class="btn btn-primary" onclick="document.getElementById('confirmationModal').style.display = 'none'; window.location.href='index.html';">Back to Home</button>
+
+      <!-- Right Column: Simulated Manager Alerts (The pitch to client) -->
+      <div style="padding: 3rem; background: rgba(255, 255, 255, 0.01); display: flex; flex-direction: column; justify-content: center; position: relative;">
+        <!-- Glowing green header indicating simulator mode -->
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.5rem;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--primary-green); box-shadow: 0 0 10px var(--primary-green); display: inline-block;"></span>
+          <span style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--primary-green);">Live Owner Alert Simulator</span>
+        </div>
+        
+        <h4 style="color: #ffffff; font-size: 1.15rem; margin-bottom: 1rem; font-weight: 700;">How the café owner receives this:</h4>
+        <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 2rem;">
+          This demo shows how table bookings automatically push real-time notifications to the restaurant manager's device.
+        </p>
+
+        <!-- Smartphone Alert Simulator Container -->
+        <div style="background: #0d0f12; border: 1.5px solid #1f242c; border-radius: var(--radius-md); padding: 1.25rem; box-shadow: inset 0 2px 10px rgba(0,0,0,0.8); display: flex; flex-direction: column; gap: 1rem; position: relative; overflow: hidden;">
+          
+          <!-- Mock Phone status bar -->
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; color: var(--text-muted); margin-bottom: 0.25rem;">
+            <span>Aether & Crumb Host OS</span>
+            <span>Just Now</span>
+          </div>
+
+          <!-- Alert Bubble 1: WhatsApp notification style -->
+          <div style="background: #075e54; border-radius: 10px; padding: 0.75rem 1rem; color: #ffffff; font-size: 0.8125rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-left: 4px solid var(--primary-green); animation: slideInAlert 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.25rem;">
+              <span style="font-weight: 800; display: flex; align-items: center; gap: 0.25rem;">
+                💬 WhatsApp Manager Bot 
+                <svg viewBox="0 0 24 24" style="width: 12px; height: 12px; fill: var(--primary-green);"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,17L7,13L8.41,11.59L11,14.17L15.59,9.58L17,11L11,17Z"/></svg>
+              </span>
+              <span style="font-size: 0.65rem; color: rgba(255,255,255,0.7);">Active</span>
+            </div>
+            <p style="line-height: 1.45; margin-bottom: 0.75rem;">
+              🔔 <strong>New Booking!</strong><br>
+              Name: <span id="simName" style="color: var(--primary-green); font-weight: 700;">Nityam Rajput</span><br>
+              Guests: <span id="simGuests" style="font-weight: 700;">4 Guests</span><br>
+              Occasion: <span id="simOccasion" style="font-style: italic;">Casual Hangout</span>
+            </p>
+            <div style="display: flex; gap: 0.5rem;">
+              <span style="background: rgba(255,255,255,0.1); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; color: var(--primary-green);">Auto-Assigned Table #6</span>
+            </div>
+          </div>
+
+          <!-- Alert Bubble 2: SMS notification style -->
+          <div style="background: #1e222b; border-radius: 10px; padding: 0.75rem 1rem; color: var(--text-secondary); font-size: 0.8125rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); border-left: 4px solid var(--accent-gold); animation: slideInAlert 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.25rem;">
+              <span style="font-weight: 800; color: #ffffff;">📲 Customer SMS Dispatch</span>
+              <span style="font-size: 0.65rem;">Sent</span>
+            </div>
+            <p style="line-height: 1.4;">
+              "Hey <span class="simFirstName">Nityam</span>! Your table at Aether & Crumb is booked. See you at Jumeirah!"
+            </p>
+          </div>
+          
+        </div>
+      </div>
+
     </div>
   </div>
+
+  <style>
+    @keyframes slideInAlert {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -212,6 +282,28 @@
     </div>
   </div>
 
+  <script>
+    function showReservationSummary(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('bookingName').value || 'Guest';
+      const firstName = name.split(' ')[0];
+      const guests = document.getElementById('bookingGuests').value || '2';
+      const occasion = document.getElementById('bookingOccasion').value || 'Casual Hangout';
+      
+      document.getElementById('simName').innerText = name;
+      document.querySelectorAll('.simFirstName').forEach(el => el.innerText = firstName);
+      
+      let guestsDisplay = guests;
+      if (guests === '1') guestsDisplay = '1 Guest';
+      else if (!guests.toLowerCase().includes('guest')) guestsDisplay = guests + ' Guests';
+      document.getElementById('simGuests').innerText = guestsDisplay;
+      
+      document.getElementById('simOccasion').innerText = occasion;
+      
+      document.getElementById('confirmationModal').style.display = 'flex';
+    }
+  </script>
   <script src="https://codepen.io/jh3y/pen/zYRjgjW.js" type="module"></script>
   <script src="main.js"></script>
 </body>
