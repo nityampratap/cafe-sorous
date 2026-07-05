@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://unpkg.com/open-props/normalize.min.css">
   <link rel="stylesheet" href="https://codepen.io/jh3y/pen/zYRjgjW.css">
   <link rel="stylesheet" href="style.css">
+  <script src="config.js"></script>
 </head>
 <body>
 
@@ -25,7 +26,7 @@
   <!-- Header Navigation -->
   <header class="site-header" id="siteHeader">
     <div class="container nav-container">
-      <a href="index.html" class="logo">Aether & <span>Crumb</span></a>
+      <a href="index.html" class="logo cfg-brand-name">Aether & <span>Crumb</span></a>
       
       <div class="menu-toggle" id="menuToggle">
         <span></span>
@@ -63,20 +64,20 @@
             
             <div class="visit-block-item">
               <h3>Find Our Spot</h3>
-              <p style="font-weight: 700; font-size: 1.25rem; color: #ffffff; margin-bottom: 0.25rem;">Villa 14, Jumeirah Beach Road</p>
-              <p>Jumeirah 2, Dubai, United Arab Emirates</p>
+              <p class="cfg-address-short" style="font-weight: 700; font-size: 1.25rem; color: #ffffff; margin-bottom: 0.25rem;">Villa 14, Jumeirah Beach Road</p>
+              <p class="cfg-address-full">Jumeirah 2, Dubai, United Arab Emirates</p>
             </div>
             
             <div class="visit-block-item">
               <h3>Café Timings</h3>
               <p style="font-weight: 700; font-size: 1.25rem; color: #ffffff; margin-bottom: 0.25rem;">Open Daily</p>
-              <p>Monday - Sunday: 8:00 AM - 10:00 PM</p>
-              <p style="font-size: 0.875rem; color: var(--accent-gold); margin-top: 0.25rem;">Kitchen closes at 9:45 PM</p>
+              <p class="cfg-hours">Monday - Sunday: 8:00 AM - 10:00 PM</p>
+              <p class="cfg-hours-kitchen" style="font-size: 0.875rem; color: var(--accent-gold); margin-top: 0.25rem;">Kitchen closes at 9:45 PM</p>
             </div>
             
             <div class="visit-block-item">
               <h3>Say Hello</h3>
-              <p style="font-weight: 700; font-size: 1.25rem; color: #ffffff; margin-bottom: 0.25rem;">hello@aetherandcrumb.com</p>
+              <p><a href="#" class="cfg-email" style="font-weight: 700; font-size: 1.25rem; color: #ffffff; margin-bottom: 0.25rem; text-decoration: none;">hello@aetherandcrumb.com</a></p>
             </div>
             
           </div>
@@ -99,7 +100,7 @@
             <span class="eyebrow" style="margin-bottom: 0.5rem;">Catch the Vibe</span>
             <h2 style="margin-bottom: 0;">See what's cooking & brewing daily</h2>
           </div>
-          <a href="https://instagram.com/aetherandcrumb" target="_blank" class="btn btn-secondary">Follow @aetherandcrumb</a>
+          <a href="#" target="_blank" class="btn btn-secondary cfg-instagram-link cfg-instagram-handle">Follow @aetherandcrumb</a>
         </div>
         
         <div class="instagram-grid">
@@ -141,14 +142,14 @@
       <footer class="site-footer">
         <div class="container footer-grid">
           <div class="footer-brand">
-            <a href="index.html" class="logo" style="color: #ffffff;">Aether & <span>Crumb</span></a>
-            <p>A premium street-fusion café and social hangout. Crafted coffee, spicy bites, and pure vibes.</p>
+            <a href="index.html" class="logo cfg-brand-name" style="color: #ffffff;">Aether & <span>Crumb</span></a>
+            <p class="cfg-tagline">A premium street-fusion café and social hangout. Crafted coffee, spicy bites, and pure vibes.</p>
           </div>
           <div>
             <h4 class="footer-heading">Navigate</h4>
             <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
-              <li><a href="menu.html">Menu</a></li>
+              <li><a href="menu.html">Our Menu</a></li>
               <li><a href="about.html">Our Story</a></li>
               <li><a href="visit.html">Visit Us</a></li>
               <li><a href="booking.html">Book a Table</a></li>
@@ -157,16 +158,16 @@
           <div>
             <h4 class="footer-heading">Connect</h4>
             <ul class="footer-links">
-              <li><a href="https://instagram.com/aetherandcrumb" target="_blank">Instagram</a></li>
-              <li><a href="https://zomato.com" target="_blank">Zomato</a></li>
-              <li><a href="mailto:hello@aetherandcrumb.com">Email Us</a></li>
+              <li><a href="#" target="_blank" class="cfg-instagram-link">Instagram</a></li>
+              <li><a href="#" target="_blank" class="cfg-zomato-link">Zomato</a></li>
+              <li><a href="#" class="cfg-email">Email Us</a></li>
             </ul>
           </div>
           <div>
             <h4 class="footer-heading">Café Hours</h4>
             <div class="footer-info">
-              <p>Monday - Sunday<br>8:00 AM - 10:00 PM</p>
-              <p>Villa 14, Jumeirah Beach Road,<br>Jumeirah 2, Dubai, UAE</p>
+              <p class="cfg-hours">Monday - Sunday: 8:00 AM - 10:00 PM</p>
+              <p class="cfg-address-short">Villa 14, Jumeirah Beach Road, Jumeirah 2, Dubai, UAE</p>
             </div>
           </div>
         </div>

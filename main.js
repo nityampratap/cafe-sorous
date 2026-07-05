@@ -1,5 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
+  // CONFIG INJECTION ENGINE
+  // ==========================================
+  if (typeof CafeConfig !== 'undefined') {
+    document.querySelectorAll('.cfg-brand-name').forEach(el => el.innerHTML = CafeConfig.brandName);
+    document.querySelectorAll('.cfg-tagline').forEach(el => el.innerText = CafeConfig.tagline);
+    document.querySelectorAll('.cfg-address-short').forEach(el => el.innerText = CafeConfig.addressShort);
+    document.querySelectorAll('.cfg-address-full').forEach(el => el.innerText = CafeConfig.addressFull);
+    document.querySelectorAll('.cfg-hours').forEach(el => el.innerText = CafeConfig.hoursLabel);
+    document.querySelectorAll('.cfg-hours-kitchen').forEach(el => el.innerText = CafeConfig.hoursKitchen);
+    document.querySelectorAll('.cfg-email').forEach(el => {
+      el.innerText = CafeConfig.email;
+      if (el.tagName === 'A') el.href = `mailto:${CafeConfig.email}`;
+    });
+    document.querySelectorAll('.cfg-instagram-handle').forEach(el => el.innerText = CafeConfig.instagram);
+    document.querySelectorAll('.cfg-instagram-link').forEach(el => el.href = CafeConfig.instagramLink);
+    document.querySelectorAll('.cfg-zomato-link').forEach(el => el.href = CafeConfig.zomatoLink);
+
+    // Visit page maps injection
+    const mapFrame = document.querySelector('.map-iframe');
+    if (mapFrame) mapFrame.src = CafeConfig.mapsEmbedLink;
+    
+    const directionsBtn = document.querySelector('.map-overlay-button');
+    if (directionsBtn) directionsBtn.href = CafeConfig.mapsDirectionsLink;
+  }
+
+  // ==========================================
   // MOBILE HAMBURGER MENU
   // ==========================================
   const menuToggle = document.getElementById('menuToggle');
